@@ -6,7 +6,6 @@ import { IoLocationOutline } from "react-icons/io5";
 import { weatherIcons } from "./constants/weather-icons";
 import axios from "axios";
 import moment from "moment";
-import "moment-timezone";
 
 export const App = () => {
   const [data, setData] = useState<any>("");

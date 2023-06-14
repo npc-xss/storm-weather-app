@@ -3,13 +3,13 @@ type WeatherIcons = {
 };
 
 export const weatherIcons: WeatherIcons = {
-  "Broken Clouds": "/public/icons/broken-clouds.png",
-  Mist: "/public/icons/mist.png",
-  Snow: "/public/icons/snow.png",
-  Clear: "/public/icons/clear-sky.svg",
-  Clouds: "/public/icons/few-clouds.svg",
-  "Scattered Clouds": "/public/icons/scattered-clouds.svg",
-  "Shower Rain": "/public/icons/shower-rain.svg",
-  Rain: "/public/icons/rain.svg",
-  Thunderstorm: "/public/icons/thunderstorm.svg",
+  "Broken Clouds": "/icons/broken-clouds.png",
+  Mist: "/icons/mist.png",
+  Snow: "/icons/snow.png",
+  Clear: "/icons/clear-sky.svg",
+  Clouds: "/icons/few-clouds.svg",
+  "Scattered Clouds": "/icons/scattered-clouds.svg",
+  "Shower Rain": "/icons/shower-rain.svg",
+  Rain: "/icons/rain.svg",
+  Thunderstorm: "/icons/thunderstorm.svg",
 };
