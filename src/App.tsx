@@ -3,13 +3,14 @@ import { HiOutlineSearch } from "react-icons/hi";
 import { WiSunrise } from "react-icons/wi";
 import { WiSunset } from "react-icons/wi";
 import { IoLocationOutline } from "react-icons/io5";
+import { weatherIcons } from "./constants/weather-icons";
 import axios from "axios";
 import moment from "moment";
+import "moment-timezone";
 
 export const App = () => {
   const [data, setData] = useState<any>("");
   const [location, setLocation] = useState<string>("Kathmandu");
-  const currentDateTime = moment().format("dddd, hh:mm A");
 
   const endpoint = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${
     import.meta.env.VITE_WEATHER_API_KEY
@@ -42,6 +43,8 @@ export const App = () => {
   useEffect(() => {
     fetchWeather();
   }, []);
+
+  // const currentDateTime = moment().format("dddd, hh:mm A");
 
   const getGreeting = () => {
     const currentHour = moment().hour();
@@ -94,11 +97,17 @@ export const App = () => {
 
         <div className="mt-5 flex items-center justify-center">
           <div>
-            <img
-              className="h-40 w-40"
-              src="/icons/party-sunny.svg"
-              alt="current weather image"
-            />
+            {data.weather && (
+              <>
+                {data.weather[0].main in weatherIcons && (
+                  <img
+                    className="h-40 w-40"
+                    src={weatherIcons[data.weather[0].main]}
+                    alt="current weather image"
+                  />
+                )}
+              </>
+            )}
 
             <div>
               {data.main && (
@@ -107,13 +116,13 @@ export const App = () => {
                 </h1>
               )}
               {data.weather && (
-                <p className="mt-5 text-center font-semibold">
+                <p className="mt-2 text-center text-lg font-semibold">
                   {data.weather[0].main}
                 </p>
               )}
-              <p className="text-center text-sm font-semibold tracking-wide">
+              {/* <p className="text-center text-sm font-semibold tracking-wide">
                 {currentDateTime}
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
@@ -130,7 +139,9 @@ export const App = () => {
                   </p>
 
                   {data.sys && (
-                    <p className="text-lg font-semibold">{data.sys.sunrise}</p>
+                    <p className="text-lg font-semibold">
+                      {moment.unix(data.sys.sunrise).format("h:mm A")}
+                    </p>
                   )}
                 </div>
               </div>
@@ -143,13 +154,15 @@ export const App = () => {
                     Sunset
                   </p>
                   {data.sys && (
-                    <p className="text-lg font-semibold">{data.sys.sunset}</p>
+                    <p className="text-lg font-semibold">
+                      {moment.unix(data.sys.sunset).format("h:mm A")}
+                    </p>
                   )}
                 </div>
               </div>
             </div>
 
-            <div className="mt-5 border border-dashed border-white/70" />
+            <div className="mt-5 border border-dashed border-white/50" />
 
             <div className="mt-5 grid grid-cols-2 gap-2">
               <div className="flex items-center gap-2">
@@ -159,7 +172,7 @@ export const App = () => {
                   </p>
                   {data.main && (
                     <p className="text-lg font-semibold tracking-wide">
-                      {data.main.temp_min.toFixed()}
+                      {data.main.temp_min.toFixed()}ºC
                     </p>
                   )}
                 </div>
@@ -172,14 +185,14 @@ export const App = () => {
                   </p>
                   {data.main && (
                     <p className="text-lg font-semibold tracking-wide">
-                      {data.main.temp_max.toFixed()}
+                      {data.main.temp_max.toFixed()}ºC
                     </p>
                   )}
                 </div>
               </div>
             </div>
 
-            <div className="mt-5 border border-dashed border-white/70" />
+            <div className="mt-5 border border-dashed border-white/50" />
 
             <div className="mt-5 grid grid-cols-2 gap-2">
               <div className="flex items-center gap-2">
@@ -189,7 +202,7 @@ export const App = () => {
                   </p>
                   {data.main && (
                     <p className="text-lg font-semibold tracking-wide">
-                      {data.main.pressure}
+                      {data.main.pressure} hPa
                     </p>
                   )}
                 </div>
@@ -202,7 +215,7 @@ export const App = () => {
                   </p>
                   {data.main && (
                     <p className="text-lg font-semibold tracking-wide">
-                      {data.main.humidity}
+                      {data.main.humidity}%
                     </p>
                   )}
                 </div>
