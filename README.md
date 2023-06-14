@@ -1,6 +1,8 @@
-# Storm A Weather App
+# Storm (Weather App)
 
 This is a weather application built with React that allows you to search for weather information based on city names. It fetches weather data from the OpenWeather API and displays the current temperature, weather condition, sunrise and sunset times, as well as other relevant information.
+
+![Alt text](<Screenshot 2023-06-14 182322.png>)
 
 ## Installation
 
