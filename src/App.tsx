@@ -58,12 +58,12 @@ export const App = () => {
   };
 
   return (
-    <main className="mx-auto flex min-h-screen max-w-xl items-center justify-center p-5">
+    <main className="mx-auto flex min-h-screen max-w-lg items-center justify-center p-5">
       <div className="flex w-full flex-col rounded-xl bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-sky-600 to-indigo-900 p-10 shadow-xl">
         <div className="flex gap-2">
           <div className="flex-1">
             <input
-              className="w-full rounded-xl border-2 border-indigo-300 bg-transparent px-4 py-4 font-semibold tracking-wide placeholder:text-blue-100 focus:border-dashed focus:outline-none"
+              className="w-full rounded-xl border-2 border-indigo-300 bg-transparent p-2 font-semibold tracking-wide placeholder:text-blue-100 focus:border-dashed focus:outline-none"
               type="text"
               placeholder="Search for city names"
               value={location}
@@ -75,7 +75,7 @@ export const App = () => {
 
           <div>
             <button
-              className="rounded-xl border-2 border-blue-400 bg-blue-400 p-4 hover:border-blue-400 hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-indigo-100"
+              className="rounded-xl border-2 border-blue-400 bg-blue-400 p-2 hover:border-blue-400 hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-indigo-100"
               onClick={handleButtonClick}
             >
               <HiOutlineSearch size={23} />
@@ -84,30 +84,34 @@ export const App = () => {
         </div>
 
         <div className="mt-5 flex items-center gap-2">
-          {data.name && <IoLocationOutline size={40} />}
+          {data.name && <IoLocationOutline size={30} />}
 
           <div>
-            <p className="text-xl font-semibold">{getGreeting()}</p>
-            <p className="font-semibold tracking-wide">{data.name}</p>
+            <p className="font-semibold">{getGreeting()}</p>
+            <p className="font-semibold">{data.name}</p>
           </div>
         </div>
 
-        <div className="mt-10 flex items-center justify-center">
+        <div className="mt-5 flex items-center justify-center">
           <div>
-            <img className="h-48 w-48" src="/icons/party-sunny.svg" alt="" />
+            <img
+              className="h-40 w-40"
+              src="/icons/party-sunny.svg"
+              alt="current weather image"
+            />
 
             <div>
               {data.main && (
-                <h1 className="text-8xl font-semibold">
+                <h1 className="text-7xl font-semibold">
                   {data.main.temp.toFixed()}ºC
                 </h1>
               )}
               {data.weather && (
-                <p className="mt-5 text-center text-xl font-semibold">
+                <p className="mt-5 text-center font-semibold">
                   {data.weather[0].main}
                 </p>
               )}
-              <p className="text-center font-semibold tracking-wide">
+              <p className="text-center text-sm font-semibold tracking-wide">
                 {currentDateTime}
               </p>
             </div>
@@ -154,7 +158,7 @@ export const App = () => {
                     Temp Min
                   </p>
                   {data.main && (
-                    <p className="text-xl tracking-wide">
+                    <p className="text-lg font-semibold tracking-wide">
                       {data.main.temp_min.toFixed()}
                     </p>
                   )}
@@ -167,7 +171,7 @@ export const App = () => {
                     Temp Max
                   </p>
                   {data.main && (
-                    <p className="text-xl tracking-wide">
+                    <p className="text-lg font-semibold tracking-wide">
                       {data.main.temp_max.toFixed()}
                     </p>
                   )}
@@ -184,7 +188,7 @@ export const App = () => {
                     Pressure
                   </p>
                   {data.main && (
-                    <p className="text-xl tracking-wide">
+                    <p className="text-lg font-semibold tracking-wide">
                       {data.main.pressure}
                     </p>
                   )}
@@ -197,7 +201,7 @@ export const App = () => {
                     Humidity
                   </p>
                   {data.main && (
-                    <p className="text-xl tracking-wide">
+                    <p className="text-lg font-semibold tracking-wide">
                       {data.main.humidity}
                     </p>
                   )}
