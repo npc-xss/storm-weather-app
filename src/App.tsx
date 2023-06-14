@@ -6,34 +6,20 @@ import { IoLocationOutline } from "react-icons/io5";
 import axios from "axios";
 import moment from "moment";
 
-// interface WeatherData {
-//   name: string;
-//   main: {
-//     temp: number;
-//     temp_min: number;
-//     temp_max: number;
-//     pressure: number;
-//     humidity: number;
-//   };
-//   weather: { main: string }[];
-//   sys: {
-//     sunrise: number;
-//     sunset: number;
-//   };
-// }
-
-const App = () => {
-  const [data, setData] = useState({});
-  const [location, setLocation] = useState("Kathmandu");
+export const App = () => {
+  const [data, setData] = useState<any>("");
+  const [location, setLocation] = useState<string>("Kathmandu");
   const currentDateTime = moment().format("dddd, hh:mm A");
 
-  const endpoint = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=f285e289badaa95011d3ebc532f21895&units=metric`;
+  const endpoint = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${
+    import.meta.env.VITE_WEATHER_API_KEY
+  }&units=metric`;
 
   const fetchWeather = async () => {
     try {
       const response = await axios.get(endpoint);
       setData(response.data);
-      console.log(response.data);
+      // console.log(response.data);
     } catch (error: any) {
       if (error.response && error.response.status === 404) {
         window.alert("City not found. Please enter a valid city name.");
@@ -108,19 +94,22 @@ const App = () => {
 
         <div className="mt-10 flex items-center justify-center">
           <div>
-            {/* <img className="h-w-48 w-48 " src="/icons/party-sunny.svg" alt="" /> */}
-            <img className="h-w-48 w-48 " src="/icons/party-sunny.svg" alt="" />
+            <img className="h-48 w-48" src="/icons/party-sunny.svg" alt="" />
 
             <div>
               {data.main && (
-                <h1 className="text-8xl font-semibold">{data.main.temp.toFixed()}ºC</h1>
+                <h1 className="text-8xl font-semibold">
+                  {data.main.temp.toFixed()}ºC
+                </h1>
               )}
               {data.weather && (
                 <p className="mt-5 text-center text-xl font-semibold">
                   {data.weather[0].main}
                 </p>
               )}
-              <p className="text-center font-semibold tracking-wide">{currentDateTime}</p>
+              <p className="text-center font-semibold tracking-wide">
+                {currentDateTime}
+              </p>
             </div>
           </div>
         </div>
@@ -132,7 +121,9 @@ const App = () => {
                 <WiSunrise size={50} />
 
                 <div>
-                  <p className="font-medium tracking-wide text-indigo-300">Sunrise</p>
+                  <p className="font-medium tracking-wide text-indigo-300">
+                    Sunrise
+                  </p>
 
                   {data.sys && (
                     <p className="text-lg font-semibold">{data.sys.sunrise}</p>
@@ -144,8 +135,12 @@ const App = () => {
                 <WiSunset size={50} />
 
                 <div>
-                  <p className="font-medium tracking-wide text-indigo-300">Sunset</p>
-                  {data.sys && <p className="text-lg font-semibold">{data.sys.sunset}</p>}
+                  <p className="font-medium tracking-wide text-indigo-300">
+                    Sunset
+                  </p>
+                  {data.sys && (
+                    <p className="text-lg font-semibold">{data.sys.sunset}</p>
+                  )}
                 </div>
               </div>
             </div>
@@ -155,7 +150,9 @@ const App = () => {
             <div className="mt-5 grid grid-cols-2 gap-2">
               <div className="flex items-center gap-2">
                 <div>
-                  <p className="font-medium tracking-wide text-indigo-300">Temp Min</p>
+                  <p className="font-medium tracking-wide text-indigo-300">
+                    Temp Min
+                  </p>
                   {data.main && (
                     <p className="text-xl tracking-wide">
                       {data.main.temp_min.toFixed()}
@@ -166,7 +163,9 @@ const App = () => {
 
               <div className="flex items-center gap-2">
                 <div>
-                  <p className="font-medium tracking-wide text-indigo-300">Temp Max</p>
+                  <p className="font-medium tracking-wide text-indigo-300">
+                    Temp Max
+                  </p>
                   {data.main && (
                     <p className="text-xl tracking-wide">
                       {data.main.temp_max.toFixed()}
@@ -181,18 +180,26 @@ const App = () => {
             <div className="mt-5 grid grid-cols-2 gap-2">
               <div className="flex items-center gap-2">
                 <div>
-                  <p className="font-medium tracking-wide text-indigo-300">Pressure</p>
+                  <p className="font-medium tracking-wide text-indigo-300">
+                    Pressure
+                  </p>
                   {data.main && (
-                    <p className="text-xl tracking-wide">{data.main.pressure}</p>
+                    <p className="text-xl tracking-wide">
+                      {data.main.pressure}
+                    </p>
                   )}
                 </div>
               </div>
 
               <div className="flex items-center gap-2">
                 <div>
-                  <p className="font-medium tracking-wide text-indigo-300">Humidity</p>
+                  <p className="font-medium tracking-wide text-indigo-300">
+                    Humidity
+                  </p>
                   {data.main && (
-                    <p className="text-xl tracking-wide">{data.main.humidity}</p>
+                    <p className="text-xl tracking-wide">
+                      {data.main.humidity}
+                    </p>
                   )}
                 </div>
               </div>
@@ -203,5 +210,3 @@ const App = () => {
     </main>
   );
 };
-
-export default App;
