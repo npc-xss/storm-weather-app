@@ -89,18 +89,18 @@ export const App = () => {
           {data.name && <IoLocationOutline size={30} />}
 
           <div>
-            <p className="font-semibold">{getGreeting()}</p>
+            {/* <p className="font-semibold">{getGreeting()}</p> */}
             <p className="font-semibold">{data.name}</p>
           </div>
         </div>
 
-        <div className="mt-5 flex items-center justify-center">
+        <div className="flex items-center justify-center">
           <div>
             {data.weather && (
               <>
                 {data.weather[0].main in weatherIcons && (
                   <img
-                    className="h-40 w-40"
+                    className="aspect-square h-44 object-contain"
                     src={weatherIcons[data.weather[0].main]}
                     alt="current weather image"
                   />
@@ -108,9 +108,16 @@ export const App = () => {
               </>
             )}
 
+            {/* Images Testing */}
+            {/* <img
+              className="aspect-square h-44 object-contain"
+              src={weatherIcons["Clouds"]}
+              alt="current weather image"
+            /> */}
+
             <div>
               {data.main && (
-                <h1 className="text-7xl font-semibold">
+                <h1 className="mt-5 text-7xl font-semibold">
                   {data.main.temp.toFixed()}ºC
                 </h1>
               )}
