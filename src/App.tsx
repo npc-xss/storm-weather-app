@@ -45,19 +45,19 @@ export const App = () => {
 
   // const currentDateTime = moment().format("dddd, hh:mm A");
 
-  const getGreeting = () => {
-    const currentHour = moment().hour();
+  // const getGreeting = () => {
+  //   const currentHour = moment().hour();
 
-    if (currentHour >= 5 && currentHour < 12) {
-      return "Good Morning";
-    } else if (currentHour >= 12 && currentHour < 18) {
-      return "Good Afternoon";
-    } else if (currentHour >= 18 && currentHour < 22) {
-      return "Good Evening";
-    } else {
-      return "Good Night";
-    }
-  };
+  //   if (currentHour >= 5 && currentHour < 12) {
+  //     return "Good Morning";
+  //   } else if (currentHour >= 12 && currentHour < 18) {
+  //     return "Good Afternoon";
+  //   } else if (currentHour >= 18 && currentHour < 22) {
+  //     return "Good Evening";
+  //   } else {
+  //     return "Good Night";
+  //   }
+  // };
 
   return (
     <main className="mx-auto flex min-h-screen max-w-lg items-center justify-center p-5">
