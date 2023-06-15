@@ -1,0 +1,15 @@
+<svg width="232" height="232" viewBox="0 0 232 232" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="232" height="232" rx="45" fill="url(#paint0_linear_109_13)"/>
+<path d="M116 99.875C154.591 99.875 185.875 87.8427 185.875 73C185.875 58.1573 154.591 46.125 116 46.125C77.4091 46.125 46.125 58.1573 46.125 73C46.125 87.8427 77.4091 99.875 116 99.875Z" stroke="white" stroke-width="7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M169.159 90.4688C172.975 93.3175 175.125 96.4888 175.125 99.875C175.125 111.754 148.68 121.375 116 121.375C91.7588 121.375 70.9038 116.054 61.82 108.475" stroke="white" stroke-width="7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M165.719 132.125C165.719 141.047 145.885 148.25 121.375 148.25C96.865 148.25 77.0312 141.047 77.0312 132.125C77.0312 127.126 83.2662 122.665 93.1025 119.709" stroke="white" stroke-width="7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M158.678 140.833C165.45 143.251 169.75 146.906 169.75 150.938C169.75 158.355 155.291 164.375 137.5 164.375" stroke="white" stroke-width="7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M134 178.028C142.999 178.013 150.269 181.646 150.277 186.157C150.284 190.217 144.327 193.61 136.522 194.225" stroke="white" stroke-width="7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M124.062 185.875C110.679 185.875 99.875 180.661 99.875 174.211C99.875 168.406 108.744 163.569 120.354 162.709" stroke="white" stroke-width="7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<defs>
+<linearGradient id="paint0_linear_109_13" x1="225" y1="212" x2="-163" y2="-146.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="#1F5180"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+</defs>
+</svg>

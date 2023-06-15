@@ -1,4 +1,4 @@
-# Storm (Weather App)
+# Storm (Weather App) <img src="public/logos/storm.svg" alt="App Logo" width="35" height="35" style="margin-bottom: -9px; margin-left:5px">
 
 This is a weather application built with React that allows you to search for weather information based on city names. It fetches weather data from the OpenWeather API and displays the current temperature, weather condition, sunrise and sunset times, as well as other relevant information.
 
