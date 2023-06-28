@@ -45,20 +45,6 @@ export const App = () => {
 
   // const currentDateTime = moment().format("dddd, hh:mm A");
 
-  // const getGreeting = () => {
-  //   const currentHour = moment().hour();
-
-  //   if (currentHour >= 5 && currentHour < 12) {
-  //     return "Good Morning";
-  //   } else if (currentHour >= 12 && currentHour < 18) {
-  //     return "Good Afternoon";
-  //   } else if (currentHour >= 18 && currentHour < 22) {
-  //     return "Good Evening";
-  //   } else {
-  //     return "Good Night";
-  //   }
-  // };
-
   return (
     <main className="mx-auto flex min-h-screen max-w-lg items-center justify-center p-5">
       <div className="flex w-full flex-col rounded-xl bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-sky-600 to-indigo-900 p-10 shadow-xl">
@@ -89,7 +75,7 @@ export const App = () => {
           {data.name && <IoLocationOutline size={30} />}
 
           <div>
-            {/* <p className="font-semibold">{getGreeting()}</p> */}
+            {/* <p className="font-semibold">Good Morning</p> */}
             <p className="font-semibold">{data.name}</p>
           </div>
         </div>
